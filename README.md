@@ -1,0 +1,1 @@
+# dirict-terraform_openstack
