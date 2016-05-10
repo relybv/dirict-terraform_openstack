@@ -38,3 +38,7 @@ output "windows server 1 address" {
     value = "${openstack_compute_floatingip_v2.float6.address}"
 }
 
+output "get windows server 1 password" {
+    value = "nova --insecure get-password win1 ~/.ssh/id_rsa.terraform"
+}
+

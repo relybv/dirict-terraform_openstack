@@ -73,6 +73,7 @@ resource "openstack_networking_subnet_v2" "frontend" {
   network_id = "${openstack_networking_network_v2.frontend.id}"
   cidr = "172.16.10.0/24"
   ip_version = 4
+  enable_dhcp = "true"
   dns_nameservers = ["8.8.8.8","8.8.4.4"]
 }
 
@@ -82,6 +83,7 @@ resource "openstack_networking_subnet_v2" "backend" {
   network_id = "${openstack_networking_network_v2.backend.id}"
   cidr = "172.16.20.0/24"
   ip_version = 4
+  enable_dhcp = "true"
   dns_nameservers = ["8.8.8.8","8.8.4.4"]
 }
 
