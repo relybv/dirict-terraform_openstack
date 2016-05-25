@@ -14,6 +14,10 @@ output "load balancer public address" {
     value = "${openstack_compute_floatingip_v2.float1.address}"
 }
 
+output "test https servers" {
+    value = "https://${openstack_compute_floatingip_v2.float1.address}/working.html"
+}
+
 output "application server 1 address" {
     value = "${openstack_compute_floatingip_v2.float2.address}"
 }
