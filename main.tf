@@ -188,6 +188,11 @@ resource "openstack_blockstorage_volume_v1" "es" {
   size = "${var.es_vol_gb}"
 }
 
+resource "openstack_compute_servergroup_v2" "appl" {
+  name = "appl"
+  policies = ["anti-affinity"]
+}
+
 resource "openstack_compute_instance_v2" "lb1" {
   name = "lb1"
   region = "${var.region}"
@@ -216,6 +221,9 @@ resource "openstack_compute_instance_v2" "appl1" {
     uuid = "${openstack_networking_network_v2.frontend.id}"
     fixed_ip_v4 = "172.16.10.101"
   }
+  scheduler_hints {
+    group = "${openstack_compute_servergroup_v2.appl.id}"
+  }
 }
 
 resource "openstack_compute_instance_v2" "appl2" {
@@ -230,6 +238,9 @@ resource "openstack_compute_instance_v2" "appl2" {
   network {
     uuid = "${openstack_networking_network_v2.frontend.id}"
     fixed_ip_v4 = "172.16.10.102"
+  }
+  scheduler_hints {
+    group = "${openstack_compute_servergroup_v2.appl.id}"
   }
 }
 
@@ -266,8 +277,8 @@ resource "openstack_compute_instance_v2" "monitor1" {
   floating_ip = "${openstack_compute_floatingip_v2.float5.address}"
   user_data = "${template_file.init_monitor.rendered}"
   network {
-    uuid = "${openstack_networking_network_v2.backend.id}"
-    fixed_ip_v4 = "172.16.20.201"
+    uuid = "${openstack_networking_network_v2.frontend.id}"
+    fixed_ip_v4 = "172.16.10.201"
   }
   volume {
     volume_id = "${openstack_blockstorage_volume_v1.es.id}"
