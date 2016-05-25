@@ -31,7 +31,7 @@ output "monitor server 1 address" {
 }
 
 output "jump server login" {
-    value = "ssh ubuntu@${openstack_compute_floatingip_v2.float5.address} ~/.ssh/id_rsa.terraform"
+    value = "ssh ubuntu@${openstack_compute_floatingip_v2.float5.address} -i ~/.ssh/id_rsa.terraform"
 }
 
 output "windows server 1 address" {
