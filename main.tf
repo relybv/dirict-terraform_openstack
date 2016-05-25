@@ -25,6 +25,7 @@ resource "template_file" "init_appl" {
         monitor_address = "${openstack_compute_instance_v2.monitor1.network.0.fixed_ip_v4}"
         nfs_address = "${openstack_compute_instance_v2.db1.network.0.fixed_ip_v4}"
         db_address = "${openstack_compute_instance_v2.db1.network.0.fixed_ip_v4}"
+        win_address = "${openstack_compute_instance_v2.win1.network.0.fixed_ip_v4}"
     }
 }
 
