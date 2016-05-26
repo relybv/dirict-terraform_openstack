@@ -17,12 +17,16 @@ variable "ext_lb_name" {
     default = "www"
 }
 
-# specify stack user cretentials
+# specify AWS credentials as 'export TF_VAR_aws_access_key=<accesskey>; export TF_VAR_aws_secret_key=<secretkey>'
+variable "aws_access_key" {}
+variable "aws_secret_key" {}
+
+# specify openstack user cretentials
 variable "user_name" {
     default = "paul.gomersbach"
 }
 
-# set password as 'export TF_VAR_password=<password>'
+# set openstack password as 'export TF_VAR_password=<password>'
 variable "password" {}
 
 # generate your own key
@@ -31,6 +35,7 @@ variable "ssh_key_file" {
 }
 
 ############### adjust as needed ###############
+
 variable "db_vol_gb" {
     default = 10
 }

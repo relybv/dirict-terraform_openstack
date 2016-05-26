@@ -1,9 +1,17 @@
+# Configure the openstack provider
 provider "openstack" {
   user_name  = "${var.user_name}"
   tenant_name = "${var.tenant_name}"
   password  = "${var.password}"
   insecure = true
   auth_url  = "${var.auth_url}"
+}
+
+# Configure the AWS Provider
+provider "aws" {
+    access_key = "${var.aws_access_key}"
+    secret_key = "${var.aws_secret_key}"
+    region = "us-west-1"
 }
 
 # Template for lb cloud-init bash
