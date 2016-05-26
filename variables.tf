@@ -7,7 +7,17 @@ variable "environment" {
     default = "plgtest"
 }
 
-# specify stack user
+# specify external domain name
+variable "domain_base" {
+    default = "cloud.pgomersbach.net"
+}
+
+# specify A record name for external load balancer
+variable "ext_lb_name" {
+    default = "www"
+}
+
+# specify stack user cretentials
 variable "user_name" {
     default = "paul.gomersbach"
 }

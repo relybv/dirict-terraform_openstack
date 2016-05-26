@@ -6,6 +6,10 @@ output "environment" {
     value = "${var.environment}"
 }
 
+output "fqdn" {
+    value = "${concat(var.ext_lb_name,".",var.environment,".",var.customer,".",var.domain_base)}"
+}
+
 output "load balancer members" {
     value = "${openstack_compute_instance_v2.appl1.network.0.fixed_ip_v4} ${openstack_compute_instance_v2.appl2.network.0.fixed_ip_v4}"
 }
