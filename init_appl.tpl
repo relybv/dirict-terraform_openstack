@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Start of boot script"
+
 export FACTER_monitor_address="${monitor_address}"
 echo "Rsyslog server is: $FACTER_monitor_address"
 
@@ -11,5 +12,8 @@ echo "Database server is: $FACTER_db_address"
 
 export FACTER_win_address="${win_address}"
 echo "Windows  server is: $FACTER_win_address"
+
+export FACTER_ext_lb_fqdn="${ext_lb_fqdn}"
+echo "External load balancer fqdn is: $FACTER_ext_lb_fqdn"
 
 wget https://raw.githubusercontent.com/relybv/dirict-role_appl/master/files/bootme.sh && bash bootme.sh

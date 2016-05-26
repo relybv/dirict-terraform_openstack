@@ -26,6 +26,7 @@ resource "template_file" "init_appl" {
         nfs_address = "${openstack_compute_instance_v2.db1.network.0.fixed_ip_v4}"
         db_address = "${openstack_compute_instance_v2.db1.network.0.fixed_ip_v4}"
         win_address = "${openstack_compute_instance_v2.win1.network.0.fixed_ip_v4}"
+        ext_lb_fqdn = "${concat(var.ext_lb_name,".",var.environment,".",var.customer,".",var.domain_base)}"        
     }
 }
 
