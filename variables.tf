@@ -37,7 +37,7 @@ variable "ssh_key_file" {
 ############### adjust as needed ###############
 
 variable "db_vol_gb" {
-    default = 10
+    default = 100
 }
 
 variable "nfs_vol_gb" {
@@ -45,7 +45,7 @@ variable "nfs_vol_gb" {
 }
 
 variable "es_vol_gb" {
-    default = 10
+    default = 100
 }
 
 
