@@ -7,7 +7,7 @@ variable "environment" {
     default = "plgtest"
 }
 
-# specify external domain name
+# specify external domain base
 variable "domain_base" {
     default = "cloud.pgomersbach.net"
 }
