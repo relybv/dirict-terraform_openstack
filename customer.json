@@ -1,5 +1,5 @@
 {
-  "profile_apache::log_level" : "info",
+  "log_level" : "info",
   "vhost" : "%{fqdn}",
   "docroot" : "/home/notarisdossier/application/current/frontends/office/public/",
   "nfs_mountpoint" : "/mnt/templates",
