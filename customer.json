@@ -1,5 +1,15 @@
 {
   "db_password" : "changeme",
+  "ssh_keys": {
+    "paulg": {
+      "user": "p.gomersbach@rely.nl",
+      "ssh_key": "CCCCC3NzaC1yc2EAAAABIwAAAQEA9Y9X..."
+    },
+    "karel": {
+      "user": "admin@dirict.nl",
+      "ssh_key": "DDDDD3NzaC1yc2EAAAABIwAAAQEA9Y9X..."
+    }
+  },
   "profile_apache::log_level" : "info",
   "profile_apache::vhost" : "%{fqdn}",
   "profile_apache::docroot" : "/home/notarisdossier/application/current/frontends/office/public/",
