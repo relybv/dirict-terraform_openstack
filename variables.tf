@@ -91,11 +91,11 @@ variable "flavor_db" {
 }
 
 variable "flavor_mon" {
-    default = "ha_localdisk.2c.4r.60h"
+    default = "ha_localdisk.1c.1r.20h"
 }
 
 variable "flavor_win" {
-    default = "ha_localdisk.2c.4r.60h"
+    default = "ha_localdisk.1c.1r.60h"
 }
 
 variable "flavor_lb" {
